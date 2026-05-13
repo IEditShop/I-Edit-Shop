@@ -3,8 +3,8 @@ body {
   font-family: Arial, sans-serif;
   color: white;
 
-  /* 💜 premium purple background */
-  background: radial-gradient(circle at top, #2a0040 0%, #12001f 60%, #0b0014 100%);
+  /* ⚫ premium black/white background */
+  background: radial-gradient(circle at top, #2a2a2a 0%, #111111 60%, #000000 100%);
   overflow-x: hidden;
   position: relative;
 }
@@ -14,9 +14,9 @@ body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background-image: radial-gradient(rgba(170, 0, 255, 0.25) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px);
   background-size: 35px 35px;
-  opacity: 0.25;
+  opacity: 0.2;
   pointer-events: none;
   animation: floatParticles 20s linear infinite;
 }
@@ -32,11 +32,11 @@ header {
   padding: 50px 20px 20px;
 }
 
-/* 🪪 LOGO SMALLER */
+/* 🪪 LOGO */
 .logo {
-  width: 120px;   /* pas aan als je wilt */
+  width: 120px;
   height: auto;
-  filter: drop-shadow(0 0 10px #a100ff);
+  filter: drop-shadow(0 0 10px rgba(255,255,255,0.5));
 }
 
 /* GRID */
@@ -56,20 +56,19 @@ header {
   border-radius: 16px;
   text-align: center;
 
-  background: rgba(60, 0, 90, 0.35);
-  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(14px);
 
-  border: 1px solid rgba(170, 0, 255, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.15);
 
-  /* 🔥 stronger glow */
   box-shadow:
-    0 0 10px rgba(160, 0, 255, 0.25),
-    0 0 35px rgba(170, 0, 255, 0.35);
+    0 0 12px rgba(255,255,255,0.08),
+    0 0 35px rgba(255,255,255,0.06);
 
   transition: all 0.25s ease;
 }
 
-/* neon glow border effect (stronger) */
+/* neon glow border effect */
 .card::before {
   content: "";
   position: absolute;
@@ -77,33 +76,34 @@ header {
   border-radius: 16px;
   padding: 2px;
 
-  background: linear-gradient(135deg, #a100ff, #ff4df3, #6a00ff);
+  background: linear-gradient(135deg, #ffffff, #777777, #ffffff);
 
   -webkit-mask:
     linear-gradient(#000 0 0) content-box,
     linear-gradient(#000 0 0);
+
   -webkit-mask-composite: xor;
   mask-composite: exclude;
 
   pointer-events: none;
 
-  /* extra glow */
-  filter: drop-shadow(0 0 10px #a100ff);
+  filter: drop-shadow(0 0 8px rgba(255,255,255,0.3));
 }
 
 /* hover effect */
 .card:hover {
   transform: translateY(-10px) scale(1.03);
+
   box-shadow:
-    0 0 25px rgba(170, 0, 255, 0.5),
-    0 0 60px rgba(170, 0, 255, 0.4);
+    0 0 20px rgba(255,255,255,0.15),
+    0 0 50px rgba(255,255,255,0.12);
 }
 
 /* TITLE / PRICE */
 .price {
   font-size: 18px;
   margin: 10px 0;
-  color: #dcb3ff;
+  color: #d9d9d9;
 }
 
 /* BUTTON */
@@ -112,8 +112,9 @@ header {
   padding: 10px 16px;
   border-radius: 10px;
 
-  background: linear-gradient(90deg, #a100ff, #6a00ff);
-  color: white;
+  background: linear-gradient(90deg, #ffffff, #777777);
+  color: black;
+  font-weight: bold;
   text-decoration: none;
 
   transition: 0.2s ease;
@@ -121,17 +122,19 @@ header {
 
 .buy-btn:hover {
   transform: scale(1.08);
-  box-shadow: 0 0 18px #a100ff;
+  box-shadow: 0 0 18px rgba(255,255,255,0.4);
 }
 
 /* BADGE */
 .basic .badge {
-  background: linear-gradient(90deg, #a100ff, #ff4df3);
-  color: white;
+  background: linear-gradient(90deg, #ffffff, #999999);
+  color: black;
   padding: 5px 8px;
   border-radius: 8px;
   font-size: 12px;
+  font-weight: bold;
 }
+
 /* 🌌 PARTICLES CANVAS LAYER */
 #particles {
   position: fixed;
@@ -141,14 +144,4 @@ header {
   height: 100%;
   z-index: -1;
   pointer-events: none;
-}
-
-/* 🔥 stronger premium glow upgrade */
-.card {
-  background: rgba(80, 0, 120, 0.25);
-  border: 1px solid rgba(190, 0, 255, 0.6);
-  box-shadow:
-    0 0 15px rgba(160, 0, 255, 0.25),
-    0 0 45px rgba(170, 0, 255, 0.35);
-  backdrop-filter: blur(14px);
 }
